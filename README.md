@@ -47,10 +47,10 @@ Attaches the specified PHP function to the specified filter hook. So, when the f
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $function (string | required) - function name for hook;
-- $priority (integer | default: 10) - function priority;
-- $accepted_args (integer | default: 1) - num of accepted args for function.
+- `$name (string | required)` - hook name;
+- `$function (string | required)` - function name for hook;
+- `$priority (integer | default: 10)` - function priority;
+- `$accepted_args (integer | default: 1)` - num of accepted args for function.
 
 **Returns:** `true` if filter added, `false` if filter not added.
 
@@ -72,9 +72,9 @@ Applies the function attached to the specified PHP filter. The function is attac
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $data (mixed | required) - input data;
-- $some_var_* (mixed) - additional custom vars.
+- `$name (string | required)` - hook name;
+- `$data (mixed | required)` - input data;
+- `$some_var_* (mixed)` - additional custom vars.
 
 **Returns:** filtered data.
 
@@ -92,8 +92,8 @@ Removes the specified function attached to the specified filter.
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $function (string | required) - function name for hook.
+- `$name (string | required)` - hook name;
+- `$function (string | required)` - function name for hook.
 
 **Returns:** `true` if filter deleted, `false` if filter not deleted (not isset in hooks array).
 
@@ -115,10 +115,10 @@ Registers a hook event. When registering, a PHP function is specified that will 
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $function (string | required) - function name for hook;
-- $priority (integer | default: 10) - function priority;
-- $accepted_args (integer | default: 0) - num of accepted args for function
+- `$name (string | required)` - hook name;
+- `$function (string | required)` - function name for hook;
+- `$priority (integer | default: 10)` - function priority;
+- `$accepted_args (integer | default: 0)` - num of accepted args for function
 
 **Returns:** `true` if action added, `false` if action not added.
 
@@ -139,8 +139,8 @@ Creates an event (hook for an arbitrary function). For the function to work at t
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $some_var_* (mixed) - additional custom vars.
+- `$name (string | required)` - hook name;
+- `$some_var_* (mixed)` - additional custom vars.
 
 **Returns:** nothing or result of actions.
 
@@ -158,8 +158,8 @@ Removes the specified function attached to the specified action.
 
 **Args:**
 
-- $name (string | required) - hook name;
-- $function (string | required) - function name for hook.
+- `$name (string | required)` - hook name;
+- `$function (string | required)` - function name for hook.
 
 **Returns:** `true` if action deleted, `false` if action not deleted (not isset in hooks array).
 
