@@ -6,6 +6,37 @@ This functions provide work with two types of hooks:
 - filters - for changing the transferred value;
 - actions - for performing actions at a certain moment.
 
+Hooks stored in array **$hooks** with structure as below:
+
+```
+array {
+  'hook_name' => 
+    array {
+      0 => 
+        array {
+          'function' => string 'some_function'
+          'priority' => int 10
+          'accepted_args' => int 0
+        }
+    }
+  'other_hook' => 
+    array {
+      0 => 
+        array {
+          'function' => string 'another_function'
+          'priority' => int 0
+          'accepted_args' => int 1
+        }
+      1 => 
+        array {
+          'function' => string 'yet_another_function'
+          'priority' => int 50
+          'accepted_args' => int 1
+        }
+    }
+}
+```
+
 ## Filters functions
 
 ### add_filter()
@@ -20,6 +51,8 @@ Attaches the specified PHP function to the specified filter hook. So, when the f
 - $function (string | required) - function name for hook;
 - $priority (integer | default: 10) - function priority;
 - $accepted_args (integer | default: 1) - num of accepted args for function.
+
+**Returns:** `true` if filter added, `false` if filter not added.
 
 **Usage:**
 
@@ -43,6 +76,8 @@ Applies the function attached to the specified PHP filter. The function is attac
 - $data (mixed | required) - input data;
 - $some_var_* (mixed) - additional custom vars.
 
+**Returns:** filtered data.
+
 **Usage:**
 
 ```php
@@ -59,6 +94,8 @@ Removes the specified function attached to the specified filter.
 
 - $name (string | required) - hook name;
 - $function (string | required) - function name for hook.
+
+**Returns:** `true` if filter deleted, `false` if filter not deleted (not isset in hooks array).
 
 **Usage:**
 
@@ -83,6 +120,8 @@ Registers a hook event. When registering, a PHP function is specified that will 
 - $priority (integer | default: 10) - function priority;
 - $accepted_args (integer | default: 0) - num of accepted args for function
 
+**Returns:** `true` if action added, `false` if action not added.
+
 **Usage:**
 
 ```php
@@ -103,6 +142,8 @@ Creates an event (hook for an arbitrary function). For the function to work at t
 - $name (string | required) - hook name;
 - $some_var_* (mixed) - additional custom vars.
 
+**Returns:** nothing or result of actions.
+
 **Usage:**
 
 ```php
@@ -119,6 +160,8 @@ Removes the specified function attached to the specified action.
 
 - $name (string | required) - hook name;
 - $function (string | required) - function name for hook.
+
+**Returns:** `true` if action deleted, `false` if action not deleted (not isset in hooks array).
 
 **Usage:**
 
