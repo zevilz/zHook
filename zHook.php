@@ -1,4 +1,11 @@
 <?php
+/**
+ * Simple lightweight php functions for working with hooks.
+ * URL: https://github.com/zevilz/zHook
+ * Author: Alexandr "zEvilz" Emshanov
+ * License: MIT
+ * Version: 1.0.0
+*/
 
 /**
  * Add filter to hooks array
