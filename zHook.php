@@ -85,7 +85,10 @@ function apply_filters($name, $data) {
 				$data = call_user_func_array($hook['function'], $args);
 			}
 			else {
-				$data = call_user_func_array($hook['function'], array_slice($args, 0, (int)$hook['accepted_args']));
+				$data = call_user_func_array(
+					$hook['function'],
+					array_slice($args, 0, (int)$hook['accepted_args'])
+				);
 			}
 		}
 	}
